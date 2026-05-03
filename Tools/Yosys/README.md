@@ -14,15 +14,15 @@ Use this command to download Yosys with required submodules:
 
 ```bash
 git clone --recurse-submodules https://github.com/YosysHQ/yosys.git
-
-Alternative method:
-
+```
+## Alternative method:
+```bash
 git clone https://github.com/YosysHQ/yosys.git
 cd yosys
 git submodule update --init --recursive
 ```
-Download Option 2: Download ZIP
-
+## Download Option 2: Download ZIP
+```bash
 You can also download the ZIP manually from:
 
 https://github.com/YosysHQ/yosys
@@ -33,28 +33,32 @@ Open the link above.
 Click the green Code button.
 Click Download ZIP.
 Upload the ZIP file into this Tools/Yosys/ folder.
+```
 
-Ubuntu Build Dependencies
+## Ubuntu Build Dependencies
+```bash
 sudo apt-get install gawk git make python3 lld bison clang flex \
   libffi-dev libfl-dev libreadline-dev pkg-config tcl-dev zlib1g-dev \
   graphviz xdot
-
-Build Yosys
-
+```
+## Build Yosys
+```bash
 After downloading or cloning Yosys:
 
 cd yosys
 make config-gcc
 make
+```
 
-
-Optional install command:
+## Optional install command:
+```bash
 sudo make install
+```
 
-Check Installation
-
+## Check Installation
+```bash
 ./yosys -V
-
+```
 
 
 
