@@ -29,3 +29,15 @@ The artifact was prepared for a Linux environment. The following packages are ge
 sudo apt-get update
 sudo apt-get install -y gcc make git cmake g++ python3 zlib1g-dev libreadline-dev
 ```
+Additional tool-specific dependencies are listed in the corresponding files under Tools/.
+
+## Running the Case Studies
+Each case-study folder contains its own README with the exact steps for reproducing that attack.
+
+A typical workflow is:
+
+Build or install the required open-source tool.
+Compile the provided wrapper library.
+Run the tool in a controlled test environment.
+Observe the generated output files or design changes.
+Compare the observed result with the expected security impact.
