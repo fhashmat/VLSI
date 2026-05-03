@@ -16,6 +16,16 @@ VLSI/
 │   └── OpenTimer/
 │
 └── README.md
-
-
-
+```
+## Tool Setup
+The Tools/ directory contains setup notes for open-source VLSI tools used in the artifact.
+```text
+Tools/Yosys/
+Tools/OpenTimer/
+```
+## Requirements
+The artifact was prepared for a Linux environment. The following packages are generally required:
+```bash
+sudo apt-get update
+sudo apt-get install -y gcc make git cmake g++ python3 zlib1g-dev libreadline-dev
+```
