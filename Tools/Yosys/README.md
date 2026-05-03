@@ -20,7 +20,7 @@ Alternative method:
 git clone https://github.com/YosysHQ/yosys.git
 cd yosys
 git submodule update --init --recursive
-
+```
 Download Option 2: Download ZIP
 
 You can also download the ZIP manually from:
