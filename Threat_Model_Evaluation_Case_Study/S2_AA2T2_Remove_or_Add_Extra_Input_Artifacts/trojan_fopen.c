@@ -1,6 +1,4 @@
-### trojan_fopen.c
 
-```c
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <dlfcn.h>
@@ -21,5 +19,5 @@ FILE *fopen(const char *filename, const char *mode)
 
     return original_fopen(filename, mode);
 }
-```
+
 

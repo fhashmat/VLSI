@@ -1,6 +1,3 @@
-### trojan_z.c
-
-```c
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -34,5 +31,3 @@ ssize_t gzread(void *file, void *buf, unsigned len) {
 
     return result;
 }
-```
-
