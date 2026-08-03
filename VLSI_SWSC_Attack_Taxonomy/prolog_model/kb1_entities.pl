@@ -13,6 +13,21 @@ stage(post_silicon_validation). %stage7
 stage(manufacturing_testing). %stage8
 
 
+%Mechanims
+
+mechanism(distribute_backdoored_eda_tool).
+mechanism(distribute_flowscripts_to_exfiltrate_data).
+mechanism(distribute_eda_to_insert_trojan).
+mechanism(distribute_input_artifacts_to_produce_trojanize_design).
+mechanism(distribute_flowscipts_to_produce_trojanzie_design).
+mechanism(distribute_eda_with_poor_testing_capabilities).
+mechanism(distribute_flow_scripts_to_hinder_tool_testing_capabilities).
+mechanism(distribute_eda_that_allows_testing_flaws).
+mechanism(distribute_eda_input_artifacts_to_produce_unavailable_design).
+mechanism(distribute_eda_tool_input_artifacts_that_degrade_their_performance).
+mechanism(distribute_poor_performing_eda_tools).
+mechanism(distribute_poor_performing_flow_scripts).
+mechanism(remove_or_add_extra_input_artifacts).
 
 
 
