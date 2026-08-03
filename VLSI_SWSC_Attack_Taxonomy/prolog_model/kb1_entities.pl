@@ -29,5 +29,11 @@ mechanism(distribute_poor_performing_eda_tools).
 mechanism(distribute_poor_performing_flow_scripts).
 mechanism(remove_or_add_extra_input_artifacts).
 
+%outcomes
+
+outcome(confidentiality).
+outcome(intergity).
+outcome(availability).
+
 
 
