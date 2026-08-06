@@ -3,19 +3,16 @@ which mechamism can happen at which stage?
 which mechanism at that stage can cause which outcome? */
 
 /*Format for KB2
-feasibility(M, S, high).
-feasibility(M, S, medium).
-feasibility(M, S, low).
+possible_at(M, S).
 */
 
+enables(distribute_backdoored_eda_tool, attacker_controlled_eda_behavior).
+possible_at(attacker_controlled_eda_behavior, design_specifications).
+possible_at(attacker_controlled_eda_behavior, high_level_synthesis).
+possible_at(attacker_controlled_eda_behavior, logic_synthesis).
 
-feasibility(distribute_backdoored_eda_tool, design_specifications, high).
-feasibility(distribute_backdoored_eda_tool, high_level_synthesis, high).
-feasibility(distribute_backdoored_eda_tool, logic_synthesis, high).
-
-causes(distribute_backdoored_eda_tool, design_specifications, confidentiality).
-causes(distribute_backdoored_eda_tool, high_level_synthesis, confidentiality).
-causes(distribute_backdoored_eda_tool, logic_synthesis, confidentiality).
-
+causes(attacker_controlled_eda_behavior, design_specifications, confidentiality).
+causes(attacker_controlled_eda_behavior, high_level_synthesis, confidentiality).
+causes(attacker_controlled_eda_behavior, logic_synthesis, confidentiality).
 
 
