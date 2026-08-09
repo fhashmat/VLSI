@@ -1,0 +1,49 @@
+node_id,parent_id,level,paper_label,normalized_name,our_use,asw_definition,candidate_M,mechanism_definition
+BKC-000,ROOT,0,Injection of Malicious Code into Dependency Tree,injection_of_malicious_code_into_dependency_tree,root,Root goal of the attack tree; not used as an individual SWSC attack vector.,not_used_root,Root node only. It is not used as a mechanism or attack vector in the Prolog model.
+BKC-100,BKC-000,1,Create New Package,create_new_package,A_sw,An attack vector in which the attacker creates and publishes a new package so that downstream users or tools may adopt it as a dependency.,attacker_controlled_malicious_software_artifact,The attacker controls a malicious software artifact that can be consumed by a downstream user or toolchain.
+BKC-101,BKC-100,2,Trojan Horse,trojan_horse_package,A_sw_subtype,An attack vector in which the attacker creates a package that appears useful or benign but contains malicious code.,attacker_controlled_malicious_software_artifact,The attacker controls a malicious software artifact that can be consumed by a downstream user or toolchain.
+BKC-102,BKC-100,2,Typosquatting,typosquatting,A_sw_subtype,An attack vector in which the attacker creates a package name based on common spelling mistakes or small variations of a legitimate package name.,attacker_controlled_lookalike_software_artifact,"The attacker controls a software artifact that appears related to, or can be mistaken for, a legitimate artifact."
+BKC-103,BKC-100,2,Use After Free,use_after_free,A_sw_subtype,"An attack vector in which the attacker reuses an abandoned or withdrawn project, package, or account identifier to deliver a malicious package.",attacker_controlled_distribution_reference,The attacker can redirect or control a software reference that downstream users or tools rely on.
+BKC-200,BKC-000,1,Infect Existing Package,infect_existing_package,A_sw,"An attack vector in which the attacker compromises an existing package that already has users, contributors, or maintainers.",attacker_controlled_legitimate_software_artifact,The attacker gains control over a legitimate software artifact or its release path.
+BKC-300,BKC-200,2,Inject into Source,inject_into_source,A_sw,An attack vector in which malicious code is inserted into the source code of an existing package.,attacker_controlled_source_code,"The attacker can modify source code that will later be consumed, built, or executed."
+BKC-301,BKC-300,3,Pull Request as Contributor,pull_request_as_contributor,A_sw_subtype,An attack vector in which the attacker submits a malicious pull request that appears to be a benign contribution.,attacker_controlled_source_code,"The attacker can modify source code that will later be consumed, built, or executed."
+BKC-302,BKC-300,3,Commit as Maintainer,commit_as_maintainer,A_sw_subtype,An attack vector in which the attacker commits malicious code using maintainer-level authority.,maintainer_level_source_control,The attacker can modify the legitimate project source code with trusted contributor or maintainer privileges.
+BKC-303,BKC-302,4,Weak/Compromised Credentials or API Tokens,weak_or_compromised_credentials_or_api_tokens,A_sw_subtype,"An account-compromise attack in which weak, stolen, or exposed credentials/API tokens are used to gain maintainer-level access.",compromised_legitimate_account_control,"The attacker can act through a legitimate account and use its permissions to modify, build, or distribute software artifacts."
+BKC-304,BKC-302,4,Social Engineering to Become Maintainer,social_engineering_to_become_maintainer,A_sw_subtype,An attack vector in which the attacker manipulates project trust relationships to obtain maintainer status.,maintainer_level_source_control,The attacker can modify the legitimate project source code with trusted contributor or maintainer privileges.
+BKC-400,BKC-200,2,Inject During the Build,inject_during_the_build,A_sw,An attack vector in which malicious code is introduced during the build process rather than directly in the source code.,attacker_controlled_build_artifact,The attacker can influence the build process or build output.
+BKC-401,BKC-400,3,Compromise Build System,compromise_build_system,A_sw_subtype,"An attack vector in which the attacker compromises resources used by the build system, such as compilers, plugins, proxies, or DNS services.",attacker_controlled_build_system,The attacker can manipulate the build infrastructure used to produce software artifacts.
+BKC-402,BKC-401,4,Manipulate Package Download,manipulate_package_download,A_sw_subtype,An attack vector in which the attacker manipulates dependency/package downloads during the build process.,attacker_controlled_distribution_channel,The attacker can manipulate the channel through which software artifacts are retrieved.
+BKC-403,BKC-400,3,Run Malicious Build on Shared Systems,run_malicious_build_on_shared_systems,A_sw_subtype,An attack vector in which the attacker abuses shared build infrastructure so that malicious resources affect another project’s later build.,attacker_controlled_build_execution,The attacker can execute or trigger a build process that produces a malicious software artifact.
+BKC-500,BKC-200,2,Inject into Repository System,inject_into_repository_system,A_sw,An attack vector in which malicious code or malicious package versions are introduced through the package repository or hosting system.,attacker_controlled_hosting_system,The attacker can manipulate the package-hosting infrastructure used to store or serve software artifacts.
+BKC-501,BKC-500,3,Weak/Compromised Credentials or API Tokens,weak_or_compromised_credentials_or_api_tokens,A_sw_subtype,"An account-compromise attack in which weak, stolen, or exposed credentials/API tokens are used to publish malicious package versions.",compromised_legitimate_account_control,"The attacker can act through a legitimate account and use its permissions to modify, build, or distribute software artifacts."
+BKC-502,BKC-500,3,Exploit Vulnerabilities,exploit_vulnerabilities,A_sw_subtype,An attack vector in which the attacker exploits vulnerabilities in a package repository or hosting system to affect package contents or releases.,attacker_controlled_hosting_system,The attacker can manipulate the package-hosting infrastructure used to store or serve software artifacts.
+BKC-503,BKC-500,3,Deploy in Alternative Repository/Mirror,deploy_in_alternative_repository_or_mirror,A_sw_subtype,An attack vector in which the attacker places malicious package versions in an alternative repository or mirror and waits for victims to retrieve them.,attacker_controlled_distribution_reference,The attacker can redirect or control a software reference that downstream users or tools rely on.
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+node_id,parent_id,level,paper_label,normalized_name,our_use,trigger_definition,notes,
+BKC-E000,ROOT,0,Execute Malicious Behavior,execute_malicious_behavior,execution_root,Root goal: malicious code executes after it is already present in the dependency tree.,Not A_sw; this is execution/trigger behavior.,
+BKC-E100,BKC-E000,1,Install Scripts,install_scripts,execution_trigger,"Malicious code executes during package installation, often through install logic such as package manager scripts.",Useful later for explaining downstream consumption.,
+BKC-E200,BKC-E000,1,Test Case,test_case,execution_trigger,Malicious code executes when package test routines are run.,Useful if a VLSI flow runs tests or validation scripts.,
+BKC-E300,BKC-E000,1,Runtime,runtime,execution_trigger,Malicious code executes when the downstream package or program runs and invokes the malicious logic.,Useful for runtime tool/plugin behavior.,
+BKC-E400,BKC-E000,1,Conditional Execution,conditional_execution,execution_condition,Malicious code executes only when selected conditions are satisfied.,Useful for evasion or target-specific attacks.,
+BKC-E401,BKC-E400,2,Application State,application_state,execution_condition,Malicious code checks application state before executing.,"Example: production mode, wallet balance, resolvable domain.",
+BKC-E402,BKC-E400,2,Dependency Tree,dependency_tree,execution_condition,Malicious code checks whether a specific dependency or package is present.,Useful for targeted downstream attacks.,
+BKC-E403,BKC-E400,2,Operating System,operating_system,execution_condition,Malicious code checks the operating system before executing.,Useful for targeting build environments.,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+#,unique candidate_M,,,,,,,
+1,attacker_controlled_malicious_software_artifact,,,,,,,
+2,attacker_controlled_lookalike_software_artifact,,,,,,,
+3,attacker_controlled_distribution_reference,,,,,,,
+4,attacker_controlled_legitimate_software_artifact,,,,,,,
+5,attacker_controlled_source_code,,,,,,,
+6,maintainer_level_source_control,,,,,,,
+7,compromised_legitimate_account_control,,,,,,,
+8,attacker_controlled_build_artifact,,,,,,,
+9,attacker_controlled_build_system,,,,,,,
+10,attacker_controlled_distribution_channel,,,,,,,
+11,attacker_controlled_build_execution,,,,,,,
+12,attacker_controlled_hosting_system,,,,,,,
