@@ -10,7 +10,10 @@ References
 The current extraction sheets are based on the following software supply-chain attack taxonomy and measurement papers:
 
 P. Ladisa, H. Plate, M. Martinez, and O. Barais, “SoK: Taxonomy of Attacks on Open-Source Software Supply Chains.”
+
 M. Ohm, H. Plate, A. Sykosch, and M. Meier, “Backstabber’s Knife Collection: A Review of Open Source Software Supply Chain Attacks.”
+
 Gokkaya et al., “Software Supply Chain: A Taxonomy of Attacks, Mitigations and Risk Assessment Strategies.”
+
 Y. Gu et al., “Investigating Package Related Security Threats in Software Registries.”
 
