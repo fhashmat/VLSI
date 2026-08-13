@@ -1,0 +1,47 @@
+Paper: A Survey of Hardware Trojan Taxonomy and Detection,,,,,,
+,,,,,,
+section,vlsi_attack_vector_A,mechanism_M,source_context,outcome_O,exact_paper_wording,notes
+Introduction,Hardware Trojan insertion,malicious_hardware_or_firmware_modification,IC design / fabrication / FPGA bitstream,confidentiality;integrity;availability,hardware modifications,Top-level Trojan realization form; paper says Trojans can be implemented as hardware modifications.
+Introduction,Firmware Trojan insertion,malicious_firmware_modification,FPGA bitstream,confidentiality;integrity;availability,firmware modifications,Useful for VLSI/FPGA design-flow artifacts such as bitstreams.
+Introduction,System disablement,trojan_delayed_disable_or_destroy,system operation,availability,disable or destroy a system,Trojan action/outcome described in the introduction.
+Introduction,Covert information leakage,trojan_covert_information_leakage,chip / system operation,confidentiality,leak confidential information and secret keys covertly,Direct confidentiality outcome.
+Introduction,Trojan IC substitution,trojan_ic_substitution,transit / fabrication supply chain,integrity;availability,substitute Trojan ICs for genuine ones,Supply-chain insertion context.
+Introduction,Mask-level Trojan insertion,trojan_mask_implantation,fabrication / mask generation,integrity,implanting a Trojan into the IC mask,Fabrication-side Trojan insertion mechanism.
+Introduction,Pre-fabrication malicious alteration,malicious_design_alteration_before_fabrication,design / pre-fabrication,integrity,maliciously alter the design before or during fabrication,Important for connecting design-side compromise to Trojan insertion.
+Trojan design and taxonomy,Hardware Trojan insertion,original_circuitry_modification,original circuitry,confidentiality;integrity;availability,modifications to original circuitry,Definition-like wording from the paper.
+Trojan design and taxonomy,Hardware Trojan insertion,hardware_mechanism_for_data_or_software_access,chips,confidentiality,use hardware mechanisms to gain access to data or software running on the chips,Useful for confidentiality and software/hardware interaction.
+Trojan design and taxonomy,Hardware Trojan taxonomy,trojan_physical_activation_action_classification,Trojan classification,confidentiality;integrity;availability,"physical, activation, and action characteristics",Top-level taxonomy dimensions from Figure 1.
+Trojan design and taxonomy,Functional Trojan,addition_or_deletion_of_transistors_or_gates,chip circuitry,integrity,addition or deletion of transistors or gates,Physical/type characteristic.
+Trojan design and taxonomy,Parametric Trojan,modification_of_existing_wires_and_logic,chip circuitry,integrity,modifications of existing wires and logic,Physical/type characteristic.
+Trojan design and taxonomy,Layout-changing Trojan,physical_layout_change,chip physical layout,integrity,layout change,Exact Figure 1 taxonomy term.
+Trojan design and taxonomy,Layout-preserving Trojan,no_physical_layout_change,chip physical layout,integrity,layout same,Exact Figure 1 taxonomy term.
+Trojan design and taxonomy,Externally activated Trojan,external_antenna_or_sensor_trigger,chip / external environment,integrity;availability,externally activated,Activation characteristic from Figure 1.
+Trojan design and taxonomy,Internally activated Trojan,internal_logic_or_state_trigger,chip internal logic,integrity;availability,internally activated,Activation characteristic from Figure 1.
+Trojan design and taxonomy,Always-on Trojan,always_active_trojan,chip operation,integrity;availability,always on,Activation subclass from Figure 1.
+Trojan design and taxonomy,Condition-based Trojan,conditional_trigger,chip operation,integrity;availability,conditional,Activation subclass from Figure 1.
+Trojan design and taxonomy,Logic-triggered Trojan,internal_logic_state_or_input_pattern_trigger,internal logic / input pattern,integrity;availability,internal logic state,Condition-based trigger example.
+Trojan design and taxonomy,Sensor-triggered Trojan,temperature_voltage_or_environmental_sensor_trigger,sensor / external environment,integrity;availability,"temperature, voltage",Exact trigger examples from the paper.
+Trojan design and taxonomy,Function-modifying Trojan,add_remove_or_bypass_logic,chip function,integrity,modify function,Action characteristic from Figure 1.
+Trojan design and taxonomy,Specification-modifying Trojan,parametric_property_modification,delay / transistor or wire geometry,integrity;availability,modify specification,Action characteristic from Figure 1.
+Trojan design and taxonomy,Information-transmitting Trojan,key_information_transmission,chip / adversary channel,confidentiality,transmit information,Action characteristic from Figure 1.
+section,vlsi_attack_vector_A,mechanism_M,source_context,outcome_O,exact_paper_wording,notes
+Trojan design and taxonomy,Hardware Trojan insertion,trigger_storage_driver_structure,hardware Trojan horse,confidentiality;integrity;availability,"trigger, storage, and driver",The paper describes three components of a hardware Trojan horse.
+Trojan design and taxonomy,Hardware Trojan insertion,trigger_based_activation,hardware Trojan horse,integrity;availability,A trigger incites the planned HTH,Trigger component for Trojan activation.
+Trojan design and taxonomy,Hardware Trojan insertion,stored_trojan_action,memory / sequential circuit,confidentiality;integrity;availability,stored in memory or a sequential circuit,The action after trigger can be stored.
+Trojan design and taxonomy,Hardware Trojan insertion,driver_based_payload_execution,hardware Trojan horse,confidentiality;integrity;availability,A driver implements the action,Driver component executes the Trojan action.
+Trojan design and taxonomy,Hardware Trojan insertion,presynthesis_structural_manipulation,IC design / IP core,integrity,presynthesis manipulation of the circuit’s structure,Specific insertion approach for hardware Trojans.
+Trojan design and taxonomy,Hardware Trojan insertion,fsm_state_manipulation,high-level design description / FSM,integrity,altering the FSM,Trojan can be inserted by modifying the FSM.
+Trojan design and taxonomy,Hardware Trojan insertion,embedded_trojan_states,FSM / high-level design,integrity,embedding states into it,Trojan states are embedded into the design FSM.
+Trojan design and taxonomy,Hardware Trojan insertion,hidden_fsm_driver,FSM structure,integrity,driver hidden in the structure of the FSM,The Trojan driver is hidden inside the FSM structure.
+Trojan design and taxonomy,Hardware Trojan insertion,unremovable_trojan_in_functionality,original design FSM,integrity,inseparable (unremovable) from the original design’s functionality,The Trojan is merged into the original FSM behavior.
+Trojan design and taxonomy,Covert information leakage,stealth_communication_channel,working chips,confidentiality,stealth communication,Mechanism for leaking confidential data.
+Trojan design and taxonomy,Covert information leakage,covert_channel_data_transfer,working chips / adversary channel,confidentiality,covert channel,Used to transfer confidential data from working chips to adversary.
+Trojan design and taxonomy,Hardware Trojan insertion,higher_level_authentication_bypass,IC / system authentication,integrity,bypassing higher-level authentication techniques,Trojan embedding can bypass higher-level authentication.
+Trojan design and taxonomy,RTL-level Trojan,rtl_design_attack,RTL,integrity,RTL,The paper mentions attacks on a design at RTL.
+Trojan design and taxonomy,RTL-level Trojan,functional_test_evasion,RTL / functional test,integrity,pass functional test,The paper says Trojans can evade detection and pass functional test.
+Trojan design and taxonomy,Malicious processor modification,memory_access_mechanism,modified CPU,confidentiality;integrity,memory access,Modified CPU mechanism that can violate OS isolation expectations.
+Trojan design and taxonomy,Malicious processor modification,shadow_mode_execution,modified CPU,integrity;availability,shadow-mode mechanisms,Mechanism for stealthy execution of malicious firmware.
+Trojan design and taxonomy,Privilege escalation,privilege_escalation_without_credentials,modified CPU / OS interaction,integrity,privilege escalation attack,Gives attacker root access without normal checks.
+Trojan design and taxonomy,Login backdoor,passwordless_root_login,shadow mode,confidentiality;integrity,log-in backdoor,Allows root login without password.
+Trojan design and taxonomy,Password stealing,secret_exfiltration_service,modified processor / software interaction,confidentiality,stealing passwords,Example attack supported by malicious hardware.
+Trojan design and taxonomy,Hardware Trojan insertion,remote_trojan_control,IP core / malicious circuit,integrity;availability,"remotely activating, controlling, and disabling the Trojan",Mechanism for active Trojan control.

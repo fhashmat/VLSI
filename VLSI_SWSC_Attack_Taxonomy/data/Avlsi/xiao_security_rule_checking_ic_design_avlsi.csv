@@ -1,0 +1,12 @@
+section,vlsi_attack_vector_A,mechanism_M,stage_S,outcome_O,exact_paper_wording,notes
+Vulnerabilities by abstraction level,RTL hardware Trojan,dangerous_dont_care_propagation,rtl,confidentiality;integrity,Dangerous don’t-cares,Table 1 lists dangerous don't-cares as an RTL-level vulnerability for Hardware Trojan attacks.
+Vulnerabilities by abstraction level,RTL hardware Trojan,hard_to_control_and_observe_logic,rtl,integrity,Hard to control and observe,Table 1 maps hard-to-control/observe RTL logic to Hardware Trojan risk.
+Vulnerabilities by abstraction level,RTL asset leakage,asset_propagation_to_observable_nodes,rtl,confidentiality,Asset leakage,Table 1 maps RTL asset leakage to asset hacking.
+Vulnerabilities by abstraction level,Gate-level hardware Trojan,hard_to_control_and_observe_net,gate_level,integrity,Hard to control and observe net,Table 1 maps hard-to-control/observe nets to Hardware Trojan risk.
+Vulnerabilities by abstraction level,FSM fault-injection vulnerability,illegal_access_to_protected_state,gate_level,integrity;availability,Vulnerable finite state machine,Table 1 maps vulnerable FSMs to fault injection and Hardware Trojan attacks.
+Vulnerabilities by abstraction level,Gate-level asset leakage,asset_access_or_observation_at_gate_level,gate_level,confidentiality,Asset leakage,Table 1 maps gate-level asset leakage to asset hacking.
+Vulnerabilities by abstraction level,DFT asset leakage,test_structure_exposes_asset,dft_dfd,confidentiality,Design for test,Table 1 maps design-for-test structures to asset hacking.
+Vulnerabilities by abstraction level,DFD asset leakage,debug_structure_exposes_asset,dft_dfd,confidentiality,Design for debug,Table 1 maps design-for-debug structures to asset hacking.
+Vulnerabilities by abstraction level,Physical-layout side-channel leakage,side_channel_signal_exposure,physical_layout,confidentiality,Side-channel signal,Table 1 maps physical-layout side-channel signals to side-channel attacks.
+Vulnerabilities by abstraction level,Micro-probing attack,exposed_security_critical_nets,physical_layout,confidentiality,Micro-probing,Table 1 maps exposed security-critical nets to micro-probing attacks.
+Vulnerabilities by abstraction level,Physical-layout fault injection,injectable_fault_or_error,physical_layout,integrity;availability,Injectable fault or error,Table 1 maps injectable faults/errors to fault-injection attacks.

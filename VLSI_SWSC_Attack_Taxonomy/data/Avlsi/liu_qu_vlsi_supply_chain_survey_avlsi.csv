@@ -1,0 +1,27 @@
+Paper: VLSI supply chain security risks and mitigation techniques: A survey,,,,,,
+,,,,,,
+section,vlsi_attack_vector_A,mechanism_M,source_context,outcome_O,exact_paper_wording,notes
+2,IP theft and misuse,illegal_access_or_use_of_design_ip,VLSI supply chain,confidentiality,IP theft and misuse,Top-level risk category from Section 2.
+2,IC tamper,ic_functionality_or_feature_modification,VLSI supply chain,integrity,IC tamper,Top-level risk category from Section 2.
+2.1,Reverse engineering,design_ip_extraction,design IP / chip / security system,confidentiality,reverse engineering,Listed in Section 2.1 and Table 1.
+2.1,Over-building,unauthorized_extra_chip_fabrication,foundry,confidentiality,over-building,Listed in Section 2.1 and Table 1.
+2.1,Cloning,unauthorized_design_copying,design IP / VLSI supply chain,confidentiality,cloning,Listed in Section 2.1 and Table 1.
+2.1,IP misuse,unauthorized_ip_use,IP licensee / design use,confidentiality,misuse an IP,Section 2.1 says an IP licensee may misuse an IP outside the license agreement.
+2.2,Counterfeiting,counterfeit_or_cloned_product_substitution,distribution / system integration,integrity;availability,counterfeits,Listed in Section 2.2 and Table 1.
+2.2,Hardware Trojan insertion,malicious_hardware_component_insertion,foundry / system assembly / captured device,confidentiality;integrity;availability,Trojan horse,Section 2.2 describes Trojan horse hardware tamper.
+2.2,Logic bomb,trojan_triggered_malicious_behavior,tampered chip,integrity;availability,logic bomb,Section 2.2 describes the Trojan horse component as acting as a logic bomb.
+2.2,Information leak backdoor,trojan_based_information_leakage,tampered chip,confidentiality,information leak back door,Section 2.2 describes Trojan behavior that leaks information.
+2.2,Hidden hardware Trojan program,trojan_rom_based_payload,hardware / processor,confidentiality;integrity;availability,Trojan ROM,Section 2.2 says an entire Trojan program may be hidden in hardware.
+2.2,IC chip replacement,counterfeit_chip_replacement,PCB / system integration,integrity;availability,replace a genuine chip,Section 2.2 describes replacing a genuine chip with a counterfeit chip.
+2.2,Hidden hardware backdoor,stealthy_hardware_attack_mechanism,tampered system,confidentiality;integrity,hidden attack mechanism,Section 2.2 says a tampered system may still function normally while providing a hidden attack mechanism.
+2.2,Security backdoor,extra_functionality_in_hardware,IC design / IC chip,confidentiality;integrity;availability,security backdoor,Section 2.2 says existing testing does not detect extra functionality that may be a security backdoor.
+section,vlsi_attack_vector_A,mechanism_M,source_context,outcome_O,exact_paper_wording,notes
+4.1,IC design tamper,additional_functionality_in_implementation,RTL design / gate-level netlist / layout design,integrity,without any additional functionality,Problem 1 defines IC design tamper detection as checking whether implementation faithfully realizes the design.
+4.1.1,Hardware Trojan insertion,extra_task_without_functional_tamper,IC design verification,integrity,extra task,A Trojan may do something beyond authentic functionality while normal functionality still appears correct.
+4.1.1,Hardware Trojan insertion,rare_event_trigger,IC design verification,integrity;availability,rare event,The paper says Trojans may be triggered by rare events.
+4.1.1,Hardware Trojan insertion,power_or_aging_trigger,digital simulation environment,integrity;availability,power glitch / IC aging,Examples of trigger conditions that may not be modeled in simulation.
+4.1.2,IC design tamper,unprotected_confidential_data_path,formal verification / property checking,confidentiality,unprotected path from confidential data,Formal verification can check security properties such as protected information-flow paths.
+4.1.2,IC design tamper,extra_behavior_beyond_specification,equivalence checking,integrity,no more,The paper says the “no more” part of equivalence checking is needed for Trojan detection.
+4.1.3,Hardware Trojan insertion,redundant_logic_payload,logic-equivalent implementation,integrity,redundant logic,A Trojan may be hidden even when implementation is logic equivalent to the original design.
+4.1.3,Hardware Trojan insertion,hard_to_excite_trigger_signal,third-party IP / suspicious netlist,integrity,hard-to-excite signals,The paper identifies hard-to-excite signals as candidates for Trojan triggers.
+4.1.3,Hardware Trojan insertion,untestable_or_suspicious_logic,third-party IP / netlist,integrity,suspicious logic,ATPG/SAT-based techniques are discussed for locating suspicious logic.
