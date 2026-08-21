@@ -45,4 +45,6 @@ Load the basic entity definitions.
 :- ensure_loaded(kb_bridge_generated).
 :- ensure_loaded(kb3_rules).
 
-
+% Pass-1 synthesis layer.
+:- ensure_loaded(kb_synthesis_pass1).
+:- ensure_loaded(kb4_synthesized_rules).
