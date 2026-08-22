@@ -45,3 +45,14 @@ entity_counts(A_sw, M_sw, A_vlsi, Stages, Outcomes) :-
     count_avlsi(A_vlsi),
     count_stages(Stages),
     count_outcomes(Outcomes).
+
+% ------------------------------------------------------------
+% A_sw -> M_sw relationship checks
+% ------------------------------------------------------------
+
+asw_msw_pair(A_sw, M_sw) :-
+    enables(A_sw, M_sw).
+
+count_asw_msw_pairs(N) :-
+    findall((A_sw, M_sw), asw_msw_pair(A_sw, M_sw), L),
+    length(L, N).
