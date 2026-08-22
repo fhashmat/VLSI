@@ -25,10 +25,15 @@ where:
 
 ## Files
 **kb_entities.pl**        entity definitions
+
 **kb_relationships.pl**   reviewed relationships between entities
+
 **kb_rules.pl**           Prolog rules and validation checks
+
 **queries.pl**            query helpers
+
 **load.pl**               model loader
+
 **run_model_queries.sh**  script to run main model queries
 
 ## Run the model
@@ -48,19 +53,23 @@ swipl -q -s load.pl -g "entity_counts(A,M,V,S,O), writeln((A,M,V,S,O)), halt."
 ```
 
 ## Total synthesized attack paths:
+```text
 swipl -q -s load.pl -g "count_attack_paths(N), writeln(N), halt."
+```
 
 ## Attack paths by outcome:
+```text
 swipl -q -s load.pl -g "attack_paths_by_outcome(L), writeln(L), halt."
+```
 
 ## Attack paths by stage:
+```text
 swipl -q -s load.pl -g "attack_paths_by_stage(L), writeln(L), halt."
+```
 
 ## Attack paths by A_vlsi category:
+```text
 swipl -q -s load.pl -g "attack_paths_by_avlsi(L), writeln(L), halt."
+```
 
-Notes
 
-The model uses top-level synthesized categories for path generation.
-
-Lower-level subcategories are kept as taxonomy/evidence during review, but are not directly multiplied in this version of the model.
