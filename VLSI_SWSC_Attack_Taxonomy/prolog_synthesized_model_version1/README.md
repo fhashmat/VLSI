@@ -13,13 +13,13 @@ A_sw -> M_sw -> A_vlsi -> Stage -> Outcome
 ```
 where:
 
-A_sw = synthesized software supply-chain attack category
-M_sw = software-side attacker capability
-A_vlsi = synthesized VLSI-side attack category
-Stage = VLSI design-flow stage
-Outcome = security outcome
+**A_sw** = synthesized software supply-chain attack category
+**M_sw** = software-side attacker capability
+**A_vlsi** = synthesized VLSI-side attack category
+**Stage** = VLSI design-flow stage
+**Outcome** = security outcome
 
-Files
+## Files
 kb_entities.pl        entity definitions
 kb_relationships.pl   reviewed relationships between entities
 kb_rules.pl           Prolog rules and validation checks
@@ -27,7 +27,7 @@ queries.pl            query helpers
 load.pl               model loader
 run_model_queries.sh  script to run main model queries
 
-Run the model
+## Run the model
 
 From the repository root:
 
