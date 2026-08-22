@@ -69,3 +69,23 @@ invalid_enables_list(L) :-
     findall((A_sw, M_sw, Reason),
             invalid_enables(A_sw, M_sw, Reason),
             L).
+
+% ------------------------------------------------------------
+% M_sw -> A_vlsi relationship checks
+% ------------------------------------------------------------
+
+msw_avlsi_pair(M_sw, A_vlsi) :-
+    realizes_in_vlsi(M_sw, A_vlsi).
+
+count_msw_avlsi_pairs(N) :-
+    findall((M_sw, A_vlsi), msw_avlsi_pair(M_sw, A_vlsi), L),
+    length(L, N).
+
+count_valid_msw_avlsi_pairs(N) :-
+    findall((M_sw, A_vlsi), valid_msw_avlsi_pair(M_sw, A_vlsi), L),
+    length(L, N).
+
+invalid_realizes_list(L) :-
+    findall((M_sw, A_vlsi, Reason),
+            invalid_realizes_in_vlsi(M_sw, A_vlsi, Reason),
+            L).
