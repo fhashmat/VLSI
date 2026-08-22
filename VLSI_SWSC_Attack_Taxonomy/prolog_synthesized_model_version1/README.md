@@ -42,19 +42,21 @@ Or run individual queries from inside this folder:
 cd ~/VLSI/VLSI_SWSC_Attack_Taxonomy/prolog_synthesized_model_version1
 ```
 
-Entity counts:
+## Entity counts:
+```text
 swipl -q -s load.pl -g "entity_counts(A,M,V,S,O), writeln((A,M,V,S,O)), halt."
+```
 
-Total synthesized attack paths:
+## Total synthesized attack paths:
 swipl -q -s load.pl -g "count_attack_paths(N), writeln(N), halt."
 
-Attack paths by outcome:
+## Attack paths by outcome:
 swipl -q -s load.pl -g "attack_paths_by_outcome(L), writeln(L), halt."
 
-Attack paths by stage:
+## Attack paths by stage:
 swipl -q -s load.pl -g "attack_paths_by_stage(L), writeln(L), halt."
 
-Attack paths by A_vlsi category:
+## Attack paths by A_vlsi category:
 swipl -q -s load.pl -g "attack_paths_by_avlsi(L), writeln(L), halt."
 
 Notes
