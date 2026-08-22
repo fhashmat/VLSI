@@ -84,3 +84,15 @@ invalid_affects_outcome(A_vlsi, Outcome, missing_avlsi_entity) :-
 invalid_affects_outcome(A_vlsi, Outcome, missing_outcome_entity) :-
     affects_outcome(A_vlsi, Outcome),
     \+ outcome(Outcome).
+
+% ------------------------------------------------------------
+% Final synthesized attack path rule
+%
+% Modeled path:
+% A_sw -> M_sw -> A_vlsi -> Stage -> Outcome
+% ------------------------------------------------------------
+
+attack_path(A_sw, M_sw, A_vlsi, Stage, Outcome) :-
+    valid_asw_msw_pair(A_sw, M_sw),
+    valid_msw_avlsi_pair(M_sw, A_vlsi),
+    valid_causes(A_vlsi, Stage, Outcome).

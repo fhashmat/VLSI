@@ -114,3 +114,49 @@ invalid_stage_outcome_links(L) :-
             invalid_affects_outcome(A_vlsi, Outcome, Reason),
             L2),
     append(L1, L2, L).
+
+% ------------------------------------------------------------
+% Final synthesized attack path queries
+% ------------------------------------------------------------
+
+count_attack_paths(N) :-
+    findall((A_sw, M_sw, A_vlsi, Stage, Outcome),
+            attack_path(A_sw, M_sw, A_vlsi, Stage, Outcome),
+            L),
+    length(L, N).
+
+count_attack_paths_by_outcome(Outcome, N) :-
+    outcome(Outcome),
+    findall((A_sw, M_sw, A_vlsi, Stage),
+            attack_path(A_sw, M_sw, A_vlsi, Stage, Outcome),
+            L),
+    length(L, N).
+
+attack_paths_by_outcome(L) :-
+    findall(Outcome-N,
+            count_attack_paths_by_outcome(Outcome, N),
+            L).
+
+count_attack_paths_by_stage(Stage, N) :-
+    stage(Stage),
+    findall((A_sw, M_sw, A_vlsi, Outcome),
+            attack_path(A_sw, M_sw, A_vlsi, Stage, Outcome),
+            L),
+    length(L, N).
+
+attack_paths_by_stage(L) :-
+    findall(Stage-N,
+            count_attack_paths_by_stage(Stage, N),
+            L).
+
+count_attack_paths_by_avlsi(A_vlsi, N) :-
+    avlsi(A_vlsi),
+    findall((A_sw, M_sw, Stage, Outcome),
+            attack_path(A_sw, M_sw, A_vlsi, Stage, Outcome),
+            L),
+    length(L, N).
+
+attack_paths_by_avlsi(L) :-
+    findall(A_vlsi-N,
+            count_attack_paths_by_avlsi(A_vlsi, N),
+            L).
