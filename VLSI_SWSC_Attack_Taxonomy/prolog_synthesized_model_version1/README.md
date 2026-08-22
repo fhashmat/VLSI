@@ -24,22 +24,23 @@ where:
 **Outcome** = security outcome
 
 ## Files
-kb_entities.pl        entity definitions
-kb_relationships.pl   reviewed relationships between entities
-kb_rules.pl           Prolog rules and validation checks
-queries.pl            query helpers
-load.pl               model loader
-run_model_queries.sh  script to run main model queries
+**kb_entities.pl**        entity definitions
+**kb_relationships.pl**   reviewed relationships between entities
+**kb_rules.pl**           Prolog rules and validation checks
+**queries.pl**            query helpers
+**load.pl**               model loader
+**run_model_queries.sh**  script to run main model queries
 
 ## Run the model
 
 From the repository root:
-
+```text
 ./prolog_synthesized_model_version1/run_model_queries.sh
-
+```
 Or run individual queries from inside this folder:
-
+```text
 cd ~/VLSI/VLSI_SWSC_Attack_Taxonomy/prolog_synthesized_model_version1
+```
 
 Entity counts:
 swipl -q -s load.pl -g "entity_counts(A,M,V,S,O), writeln((A,M,V,S,O)), halt."
