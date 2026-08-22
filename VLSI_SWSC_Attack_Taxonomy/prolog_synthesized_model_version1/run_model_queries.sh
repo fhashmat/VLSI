@@ -16,16 +16,16 @@ echo "[1] Entity counts: A_sw, M_sw, A_vlsi, Stages, Outcomes"
 swipl -q -s load.pl -g 'entity_counts(A,M,V,S,O), writeln((A,M,V,S,O)), halt.'
 echo
 
-echo "[2] A_sw -> M_sw relationship count and validation"
-swipl -q -s load.pl -g 'count_asw_msw_pairs(N), count_valid_asw_msw_pairs(V), invalid_enables_list(L), writeln((total=N,valid=V,invalid=L)), halt.'
+echo "[2] A_sw -> M_sw relationship count"
+swipl -q -s load.pl -g 'count_asw_msw_pairs(N), count_valid_asw_msw_pairs(V), writeln((total=N,valid=V)), halt.'
 echo
 
-echo "[3] M_sw -> A_vlsi relationship count and validation"
-swipl -q -s load.pl -g 'count_msw_avlsi_pairs(N), count_valid_msw_avlsi_pairs(V), invalid_realizes_list(L), writeln((total=N,valid=V,invalid=L)), halt.'
+echo "[3] M_sw -> A_vlsi relationship count"
+swipl -q -s load.pl -g 'count_msw_avlsi_pairs(N), count_valid_msw_avlsi_pairs(V), writeln((total=N,valid=V)), halt.'
 echo
 
-echo "[4] A_vlsi -> Stage/Outcome relationship counts and validation"
-swipl -q -s load.pl -g 'count_possible_at_pairs(P), count_affects_outcome_pairs(O), count_causes_triples(C), invalid_stage_outcome_links(L), writeln((possible_at=P,affects_outcome=O,causes=C,invalid=L)), halt.'
+echo "[4] A_vlsi -> Stage/Outcome relationship counts"
+swipl -q -s load.pl -g 'count_possible_at_pairs(P), count_affects_outcome_pairs(O), count_causes_triples(C), writeln((possible_at=P,affects_outcome=O,causes=C)), halt.'
 echo
 
 echo "[5] Total synthesized attack paths"

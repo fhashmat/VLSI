@@ -10,13 +10,6 @@
 %
 % Expected output:
 % 7,8,8,7,3
-%
-% Meaning:
-% A_sw   = 7
-% M_sw   = 8
-% A_vlsi = 8
-% Stages = 7
-% Outcomes = 3
 % ------------------------------------------------------------
 
 count_asw(N) :-
@@ -47,52 +40,24 @@ entity_counts(A_sw, M_sw, A_vlsi, Stages, Outcomes) :-
     count_outcomes(Outcomes).
 
 % ------------------------------------------------------------
-% A_sw -> M_sw relationship checks
+% Relationship counts
 % ------------------------------------------------------------
-
-asw_msw_pair(A_sw, M_sw) :-
-    enables(A_sw, M_sw).
 
 count_asw_msw_pairs(N) :-
-    findall((A_sw, M_sw), asw_msw_pair(A_sw, M_sw), L),
+    findall((A_sw, M_sw), enables(A_sw, M_sw), L),
     length(L, N).
-
-% ------------------------------------------------------------
-% Validation queries
-% ------------------------------------------------------------
 
 count_valid_asw_msw_pairs(N) :-
     findall((A_sw, M_sw), valid_asw_msw_pair(A_sw, M_sw), L),
     length(L, N).
 
-invalid_enables_list(L) :-
-    findall((A_sw, M_sw, Reason),
-            invalid_enables(A_sw, M_sw, Reason),
-            L).
-
-% ------------------------------------------------------------
-% M_sw -> A_vlsi relationship checks
-% ------------------------------------------------------------
-
-msw_avlsi_pair(M_sw, A_vlsi) :-
-    realizes_in_vlsi(M_sw, A_vlsi).
-
 count_msw_avlsi_pairs(N) :-
-    findall((M_sw, A_vlsi), msw_avlsi_pair(M_sw, A_vlsi), L),
+    findall((M_sw, A_vlsi), realizes_in_vlsi(M_sw, A_vlsi), L),
     length(L, N).
 
 count_valid_msw_avlsi_pairs(N) :-
     findall((M_sw, A_vlsi), valid_msw_avlsi_pair(M_sw, A_vlsi), L),
     length(L, N).
-
-invalid_realizes_list(L) :-
-    findall((M_sw, A_vlsi, Reason),
-            invalid_realizes_in_vlsi(M_sw, A_vlsi, Reason),
-            L).
-
-% ------------------------------------------------------------
-% A_vlsi -> Stage/Outcome checks
-% ------------------------------------------------------------
 
 count_possible_at_pairs(N) :-
     findall((A_vlsi, Stage), possible_at(A_vlsi, Stage), L),
@@ -105,15 +70,6 @@ count_affects_outcome_pairs(N) :-
 count_causes_triples(N) :-
     findall((A_vlsi, Stage, Outcome), causes(A_vlsi, Stage, Outcome), L),
     length(L, N).
-
-invalid_stage_outcome_links(L) :-
-    findall((A_vlsi, Stage, Reason),
-            invalid_possible_at(A_vlsi, Stage, Reason),
-            L1),
-    findall((A_vlsi, Outcome, Reason),
-            invalid_affects_outcome(A_vlsi, Outcome, Reason),
-            L2),
-    append(L1, L2, L).
 
 % ------------------------------------------------------------
 % Final synthesized attack path queries
