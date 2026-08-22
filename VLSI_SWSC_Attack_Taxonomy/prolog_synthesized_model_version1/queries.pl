@@ -56,3 +56,16 @@ asw_msw_pair(A_sw, M_sw) :-
 count_asw_msw_pairs(N) :-
     findall((A_sw, M_sw), asw_msw_pair(A_sw, M_sw), L),
     length(L, N).
+
+% ------------------------------------------------------------
+% Validation queries
+% ------------------------------------------------------------
+
+count_valid_asw_msw_pairs(N) :-
+    findall((A_sw, M_sw), valid_asw_msw_pair(A_sw, M_sw), L),
+    length(L, N).
+
+invalid_enables_list(L) :-
+    findall((A_sw, M_sw, Reason),
+            invalid_enables(A_sw, M_sw, Reason),
+            L).
