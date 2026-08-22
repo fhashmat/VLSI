@@ -14,9 +14,13 @@ A_sw -> M_sw -> A_vlsi -> Stage -> Outcome
 where:
 
 **A_sw** = synthesized software supply-chain attack category
+
 **M_sw** = software-side attacker capability
+
 **A_vlsi** = synthesized VLSI-side attack category
+
 **Stage** = VLSI design-flow stage
+
 **Outcome** = security outcome
 
 ## Files
