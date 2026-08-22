@@ -11,6 +11,7 @@
 :- discontiguous enables/2.
 :- discontiguous realizes_in_vlsi/2.
 :- discontiguous possible_at/2.
+:- discontiguous affects_outcome/2.
 :- discontiguous causes/3.
 
 :- ensure_loaded(kb_entities).

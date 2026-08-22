@@ -89,3 +89,28 @@ invalid_realizes_list(L) :-
     findall((M_sw, A_vlsi, Reason),
             invalid_realizes_in_vlsi(M_sw, A_vlsi, Reason),
             L).
+
+% ------------------------------------------------------------
+% A_vlsi -> Stage/Outcome checks
+% ------------------------------------------------------------
+
+count_possible_at_pairs(N) :-
+    findall((A_vlsi, Stage), possible_at(A_vlsi, Stage), L),
+    length(L, N).
+
+count_affects_outcome_pairs(N) :-
+    findall((A_vlsi, Outcome), affects_outcome(A_vlsi, Outcome), L),
+    length(L, N).
+
+count_causes_triples(N) :-
+    findall((A_vlsi, Stage, Outcome), causes(A_vlsi, Stage, Outcome), L),
+    length(L, N).
+
+invalid_stage_outcome_links(L) :-
+    findall((A_vlsi, Stage, Reason),
+            invalid_possible_at(A_vlsi, Stage, Reason),
+            L1),
+    findall((A_vlsi, Outcome, Reason),
+            invalid_affects_outcome(A_vlsi, Outcome, Reason),
+            L2),
+    append(L1, L2, L).

@@ -134,3 +134,97 @@ realizes_in_vlsi(vulnerability_or_configuration_based_control,
 realizes_in_vlsi(vulnerability_or_configuration_based_control,
                  access_abuse_or_system_disruption).
 
+
+% ------------------------------------------------------------
+% A_vlsi -> Stage
+%
+% Criterion:
+% A_vlsi is linked to a stage only when the VLSI-side attack class
+% can plausibly be introduced, enabled, observed, or propagated
+% at that stage.
+% ------------------------------------------------------------
+
+possible_at(ip_theft_misuse_or_counterfeiting, design_specifications).
+possible_at(ip_theft_misuse_or_counterfeiting, high_level_synthesis).
+possible_at(ip_theft_misuse_or_counterfeiting, logic_synthesis).
+possible_at(ip_theft_misuse_or_counterfeiting, placement_and_routing).
+possible_at(ip_theft_misuse_or_counterfeiting, physical_verification_and_signoff).
+possible_at(ip_theft_misuse_or_counterfeiting, post_silicon_validation).
+
+possible_at(design_tampering_or_malicious_modification, design_specifications).
+possible_at(design_tampering_or_malicious_modification, high_level_synthesis).
+possible_at(design_tampering_or_malicious_modification, logic_synthesis).
+possible_at(design_tampering_or_malicious_modification, post_synthesis_verification).
+possible_at(design_tampering_or_malicious_modification, placement_and_routing).
+possible_at(design_tampering_or_malicious_modification, physical_verification_and_signoff).
+
+possible_at(hardware_trojan_backdoor_or_logic_bomb, high_level_synthesis).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, logic_synthesis).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, post_synthesis_verification).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, placement_and_routing).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, physical_verification_and_signoff).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, post_silicon_validation).
+
+possible_at(information_leakage_or_asset_exposure, design_specifications).
+possible_at(information_leakage_or_asset_exposure, high_level_synthesis).
+possible_at(information_leakage_or_asset_exposure, logic_synthesis).
+possible_at(information_leakage_or_asset_exposure, post_synthesis_verification).
+possible_at(information_leakage_or_asset_exposure, placement_and_routing).
+possible_at(information_leakage_or_asset_exposure, physical_verification_and_signoff).
+possible_at(information_leakage_or_asset_exposure, post_silicon_validation).
+
+possible_at(side_channel_fault_or_physical_attack, high_level_synthesis).
+possible_at(side_channel_fault_or_physical_attack, logic_synthesis).
+possible_at(side_channel_fault_or_physical_attack, placement_and_routing).
+possible_at(side_channel_fault_or_physical_attack, physical_verification_and_signoff).
+possible_at(side_channel_fault_or_physical_attack, post_silicon_validation).
+
+possible_at(hls_induced_security_vulnerability, high_level_synthesis).
+possible_at(hls_induced_security_vulnerability, post_synthesis_verification).
+
+possible_at(ic_replacement_or_substitution, post_silicon_validation).
+
+possible_at(access_abuse_or_system_disruption, design_specifications).
+possible_at(access_abuse_or_system_disruption, high_level_synthesis).
+possible_at(access_abuse_or_system_disruption, logic_synthesis).
+possible_at(access_abuse_or_system_disruption, post_synthesis_verification).
+possible_at(access_abuse_or_system_disruption, placement_and_routing).
+possible_at(access_abuse_or_system_disruption, physical_verification_and_signoff).
+possible_at(access_abuse_or_system_disruption, post_silicon_validation).
+
+% ------------------------------------------------------------
+% A_vlsi -> Outcome
+%
+% Criterion:
+% Outcome is based on the primary security effect:
+% confidentiality = leakage/theft/exposure
+% integrity       = tampering/malicious modification
+% availability    = disablement/unusable or disrupted operation
+% ------------------------------------------------------------
+
+affects_outcome(ip_theft_misuse_or_counterfeiting, confidentiality).
+affects_outcome(ip_theft_misuse_or_counterfeiting, integrity).
+
+affects_outcome(design_tampering_or_malicious_modification, integrity).
+affects_outcome(design_tampering_or_malicious_modification, availability).
+
+affects_outcome(hardware_trojan_backdoor_or_logic_bomb, confidentiality).
+affects_outcome(hardware_trojan_backdoor_or_logic_bomb, integrity).
+affects_outcome(hardware_trojan_backdoor_or_logic_bomb, availability).
+
+affects_outcome(information_leakage_or_asset_exposure, confidentiality).
+
+affects_outcome(side_channel_fault_or_physical_attack, confidentiality).
+affects_outcome(side_channel_fault_or_physical_attack, integrity).
+affects_outcome(side_channel_fault_or_physical_attack, availability).
+
+affects_outcome(hls_induced_security_vulnerability, confidentiality).
+affects_outcome(hls_induced_security_vulnerability, integrity).
+affects_outcome(hls_induced_security_vulnerability, availability).
+
+affects_outcome(ic_replacement_or_substitution, integrity).
+affects_outcome(ic_replacement_or_substitution, availability).
+
+affects_outcome(access_abuse_or_system_disruption, integrity).
+affects_outcome(access_abuse_or_system_disruption, availability).
+

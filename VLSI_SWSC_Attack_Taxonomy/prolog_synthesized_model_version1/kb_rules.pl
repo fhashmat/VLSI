@@ -40,3 +40,47 @@ invalid_realizes_in_vlsi(M_sw, A_vlsi, missing_msw_entity) :-
 invalid_realizes_in_vlsi(M_sw, A_vlsi, missing_avlsi_entity) :-
     realizes_in_vlsi(M_sw, A_vlsi),
     \+ avlsi(A_vlsi).
+
+% ------------------------------------------------------------
+% A_vlsi -> Stage/Outcome derived rule
+% ------------------------------------------------------------
+
+causes(A_vlsi, Stage, Outcome) :-
+    possible_at(A_vlsi, Stage),
+    affects_outcome(A_vlsi, Outcome).
+
+% ------------------------------------------------------------
+% Validation checks
+% ------------------------------------------------------------
+
+valid_possible_at(A_vlsi, Stage) :-
+    possible_at(A_vlsi, Stage),
+    avlsi(A_vlsi),
+    stage(Stage).
+
+valid_affects_outcome(A_vlsi, Outcome) :-
+    affects_outcome(A_vlsi, Outcome),
+    avlsi(A_vlsi),
+    outcome(Outcome).
+
+valid_causes(A_vlsi, Stage, Outcome) :-
+    causes(A_vlsi, Stage, Outcome),
+    avlsi(A_vlsi),
+    stage(Stage),
+    outcome(Outcome).
+
+invalid_possible_at(A_vlsi, Stage, missing_avlsi_entity) :-
+    possible_at(A_vlsi, Stage),
+    \+ avlsi(A_vlsi).
+
+invalid_possible_at(A_vlsi, Stage, missing_stage_entity) :-
+    possible_at(A_vlsi, Stage),
+    \+ stage(Stage).
+
+invalid_affects_outcome(A_vlsi, Outcome, missing_avlsi_entity) :-
+    affects_outcome(A_vlsi, Outcome),
+    \+ avlsi(A_vlsi).
+
+invalid_affects_outcome(A_vlsi, Outcome, missing_outcome_entity) :-
+    affects_outcome(A_vlsi, Outcome),
+    \+ outcome(Outcome).
