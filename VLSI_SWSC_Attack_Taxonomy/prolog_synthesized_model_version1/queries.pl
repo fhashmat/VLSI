@@ -1,6 +1,23 @@
 % ============================================================
-% Query helpers
+% Query helpers for Synthesized Prolog Model Version 1
 % ============================================================
+
+% ------------------------------------------------------------
+% Useful manual test command:
+%
+% cd ~/VLSI/VLSI_SWSC_Attack_Taxonomy/prolog_synthesized_model_version1
+% swipl -q -s load.pl -g "entity_counts(A,M,V,S,O), writeln((A,M,V,S,O)), halt."
+%
+% Expected output:
+% 7,8,8,7,3
+%
+% Meaning:
+% A_sw   = 7
+% M_sw   = 8
+% A_vlsi = 8
+% Stages = 7
+% Outcomes = 3
+% ------------------------------------------------------------
 
 count_asw(N) :-
     findall(A, asw(A), L),
