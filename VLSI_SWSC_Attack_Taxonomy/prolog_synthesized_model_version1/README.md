@@ -2,8 +2,6 @@
 
 This folder contains the clean synthesized Prolog model.
 
-This model does not load or depend on the older raw/mapping-based Prolog model in `prolog_model/`.
-
 ## Model structure
 
 The modeled path is:
