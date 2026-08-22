@@ -10,7 +10,7 @@ The modeled path is:
 
 ```text
 A_sw -> M_sw -> A_vlsi -> Stage -> Outcome
-```text
+```
 where:
 
 A_sw = synthesized software supply-chain attack category
