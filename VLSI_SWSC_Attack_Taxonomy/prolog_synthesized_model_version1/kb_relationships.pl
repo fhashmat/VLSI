@@ -144,53 +144,73 @@ realizes_in_vlsi(vulnerability_or_configuration_based_control,
 % at that stage.
 % ------------------------------------------------------------
 
-possible_at(ip_theft_misuse_or_counterfeiting, design_specifications).
-possible_at(ip_theft_misuse_or_counterfeiting, high_level_synthesis).
-possible_at(ip_theft_misuse_or_counterfeiting, logic_synthesis).
-possible_at(ip_theft_misuse_or_counterfeiting, placement_and_routing).
-possible_at(ip_theft_misuse_or_counterfeiting, physical_verification_and_signoff).
-possible_at(ip_theft_misuse_or_counterfeiting, post_silicon_validation).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_0_design_specification).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_1_high_level_synthesis).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_2_logic_synthesis).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_3_post_synthesis_verification).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_4_design_for_testability).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_5_placement_and_routing).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_6_static_timing_analysis).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_7_physical_verification_and_signoff).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_8_post_silicon_validation).
+possible_at(ip_theft_misuse_or_counterfeiting, stage_9_manufacturing_testing).
 
-possible_at(design_tampering_or_malicious_modification, design_specifications).
-possible_at(design_tampering_or_malicious_modification, high_level_synthesis).
-possible_at(design_tampering_or_malicious_modification, logic_synthesis).
-possible_at(design_tampering_or_malicious_modification, post_synthesis_verification).
-possible_at(design_tampering_or_malicious_modification, placement_and_routing).
-possible_at(design_tampering_or_malicious_modification, physical_verification_and_signoff).
+possible_at(design_tampering_or_malicious_modification, stage_0_design_specification).
+possible_at(design_tampering_or_malicious_modification, stage_1_high_level_synthesis).
+possible_at(design_tampering_or_malicious_modification, stage_2_logic_synthesis).
+possible_at(design_tampering_or_malicious_modification, stage_3_post_synthesis_verification).
+possible_at(design_tampering_or_malicious_modification, stage_4_design_for_testability).
+possible_at(design_tampering_or_malicious_modification, stage_5_placement_and_routing).
+possible_at(design_tampering_or_malicious_modification, stage_6_static_timing_analysis).
+possible_at(design_tampering_or_malicious_modification, stage_7_physical_verification_and_signoff).
 
-possible_at(hardware_trojan_backdoor_or_logic_bomb, high_level_synthesis).
-possible_at(hardware_trojan_backdoor_or_logic_bomb, logic_synthesis).
-possible_at(hardware_trojan_backdoor_or_logic_bomb, post_synthesis_verification).
-possible_at(hardware_trojan_backdoor_or_logic_bomb, placement_and_routing).
-possible_at(hardware_trojan_backdoor_or_logic_bomb, physical_verification_and_signoff).
-possible_at(hardware_trojan_backdoor_or_logic_bomb, post_silicon_validation).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_1_high_level_synthesis).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_2_logic_synthesis).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_3_post_synthesis_verification).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_4_design_for_testability).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_5_placement_and_routing).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_6_static_timing_analysis).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_7_physical_verification_and_signoff).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_8_post_silicon_validation).
+possible_at(hardware_trojan_backdoor_or_logic_bomb, stage_9_manufacturing_testing).
 
-possible_at(information_leakage_or_asset_exposure, design_specifications).
-possible_at(information_leakage_or_asset_exposure, high_level_synthesis).
-possible_at(information_leakage_or_asset_exposure, logic_synthesis).
-possible_at(information_leakage_or_asset_exposure, post_synthesis_verification).
-possible_at(information_leakage_or_asset_exposure, placement_and_routing).
-possible_at(information_leakage_or_asset_exposure, physical_verification_and_signoff).
-possible_at(information_leakage_or_asset_exposure, post_silicon_validation).
+possible_at(information_leakage_or_asset_exposure, stage_0_design_specification).
+possible_at(information_leakage_or_asset_exposure, stage_1_high_level_synthesis).
+possible_at(information_leakage_or_asset_exposure, stage_2_logic_synthesis).
+possible_at(information_leakage_or_asset_exposure, stage_3_post_synthesis_verification).
+possible_at(information_leakage_or_asset_exposure, stage_4_design_for_testability).
+possible_at(information_leakage_or_asset_exposure, stage_5_placement_and_routing).
+possible_at(information_leakage_or_asset_exposure, stage_6_static_timing_analysis).
+possible_at(information_leakage_or_asset_exposure, stage_7_physical_verification_and_signoff).
+possible_at(information_leakage_or_asset_exposure, stage_8_post_silicon_validation).
+possible_at(information_leakage_or_asset_exposure, stage_9_manufacturing_testing).
 
-possible_at(side_channel_fault_or_physical_attack, high_level_synthesis).
-possible_at(side_channel_fault_or_physical_attack, logic_synthesis).
-possible_at(side_channel_fault_or_physical_attack, placement_and_routing).
-possible_at(side_channel_fault_or_physical_attack, physical_verification_and_signoff).
-possible_at(side_channel_fault_or_physical_attack, post_silicon_validation).
+possible_at(side_channel_fault_or_physical_attack, stage_1_high_level_synthesis).
+possible_at(side_channel_fault_or_physical_attack, stage_2_logic_synthesis).
+possible_at(side_channel_fault_or_physical_attack, stage_4_design_for_testability).
+possible_at(side_channel_fault_or_physical_attack, stage_5_placement_and_routing).
+possible_at(side_channel_fault_or_physical_attack, stage_6_static_timing_analysis).
+possible_at(side_channel_fault_or_physical_attack, stage_7_physical_verification_and_signoff).
+possible_at(side_channel_fault_or_physical_attack, stage_8_post_silicon_validation).
+possible_at(side_channel_fault_or_physical_attack, stage_9_manufacturing_testing).
 
-possible_at(hls_induced_security_vulnerability, high_level_synthesis).
-possible_at(hls_induced_security_vulnerability, post_synthesis_verification).
+possible_at(hls_induced_security_vulnerability, stage_1_high_level_synthesis).
+possible_at(hls_induced_security_vulnerability, stage_2_logic_synthesis).
+possible_at(hls_induced_security_vulnerability, stage_3_post_synthesis_verification).
 
-possible_at(ic_replacement_or_substitution, post_silicon_validation).
+possible_at(ic_replacement_or_substitution, stage_8_post_silicon_validation).
+possible_at(ic_replacement_or_substitution, stage_9_manufacturing_testing).
 
-possible_at(access_abuse_or_system_disruption, design_specifications).
-possible_at(access_abuse_or_system_disruption, high_level_synthesis).
-possible_at(access_abuse_or_system_disruption, logic_synthesis).
-possible_at(access_abuse_or_system_disruption, post_synthesis_verification).
-possible_at(access_abuse_or_system_disruption, placement_and_routing).
-possible_at(access_abuse_or_system_disruption, physical_verification_and_signoff).
-possible_at(access_abuse_or_system_disruption, post_silicon_validation).
+possible_at(access_abuse_or_system_disruption, stage_0_design_specification).
+possible_at(access_abuse_or_system_disruption, stage_1_high_level_synthesis).
+possible_at(access_abuse_or_system_disruption, stage_2_logic_synthesis).
+possible_at(access_abuse_or_system_disruption, stage_3_post_synthesis_verification).
+possible_at(access_abuse_or_system_disruption, stage_4_design_for_testability).
+possible_at(access_abuse_or_system_disruption, stage_5_placement_and_routing).
+possible_at(access_abuse_or_system_disruption, stage_6_static_timing_analysis).
+possible_at(access_abuse_or_system_disruption, stage_7_physical_verification_and_signoff).
+possible_at(access_abuse_or_system_disruption, stage_8_post_silicon_validation).
+possible_at(access_abuse_or_system_disruption, stage_9_manufacturing_testing).
 
 % ------------------------------------------------------------
 % A_vlsi -> Outcome

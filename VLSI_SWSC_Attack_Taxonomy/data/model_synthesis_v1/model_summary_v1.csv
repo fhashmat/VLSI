@@ -2,6 +2,11 @@ Metric,Value
 A_sw_categories,7
 M_sw_capabilities,8
 A_vlsi_categories,8
-Stages,7
+Stages,10
 Outcomes,3
-Synthesized_attack_paths,492
+A_sw_to_M_sw_pairs,8
+M_sw_to_A_vlsi_pairs,41
+A_vlsi_to_Stage_pairs,60
+A_vlsi_to_Outcome_pairs,18
+A_vlsi_Stage_Outcome_triples,130
+Synthesized_attack_paths,717

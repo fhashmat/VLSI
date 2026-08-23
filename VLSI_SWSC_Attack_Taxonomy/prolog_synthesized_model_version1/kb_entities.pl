@@ -45,14 +45,18 @@ avlsi(access_abuse_or_system_disruption).
 % -----------------------------
 % VLSI design-flow stages
 % -----------------------------
+% Stage list follows the paper's VLSI design-flow stages.
 
-stage(design_specifications).
-stage(high_level_synthesis).
-stage(logic_synthesis).
-stage(post_synthesis_verification).
-stage(placement_and_routing).
-stage(physical_verification_and_signoff).
-stage(post_silicon_validation).
+stage(stage_0_design_specification).
+stage(stage_1_high_level_synthesis).
+stage(stage_2_logic_synthesis).
+stage(stage_3_post_synthesis_verification).
+stage(stage_4_design_for_testability).
+stage(stage_5_placement_and_routing).
+stage(stage_6_static_timing_analysis).
+stage(stage_7_physical_verification_and_signoff).
+stage(stage_8_post_silicon_validation).
+stage(stage_9_manufacturing_testing).
 
 % -----------------------------
 % Security outcomes
