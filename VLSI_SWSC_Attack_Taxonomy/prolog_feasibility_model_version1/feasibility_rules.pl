@@ -28,6 +28,31 @@ category_high(Layer, Category) :-
     category_feasibility(Layer, Category, high).
 
 % -----------------------------
+% Evidence trace helpers
+%
+% These helpers connect feasibility labels back to E1-E50
+% through the evidence_mapping facts.
+% -----------------------------
+
+category_evidence_ids(Layer, Category, EvidenceIDs) :-
+    findall(EvidenceID,
+            evidence_supports_category(EvidenceID, Layer, Category, _),
+            IDs),
+    sort(IDs, EvidenceIDs).
+
+category_has_evidence(Layer, Category) :-
+    evidence_supports_category(_, Layer, Category, _).
+
+category_high_with_evidence(Layer, Category) :-
+    category_high(Layer, Category),
+    category_has_evidence(Layer, Category).
+
+category_supported_with_evidence(Layer, Category) :-
+    category_supported(Layer, Category),
+    category_has_evidence(Layer, Category).
+
+
+% -----------------------------
 % High feasibility
 %
 % High means all main parts have evidence:
@@ -39,9 +64,9 @@ category_high(Layer, Category) :-
 
 high_feasibility_path(A_sw, M_sw, A_vlsi, Stage, Outcome) :-
     attack_path(A_sw, M_sw, A_vlsi, Stage, Outcome),
-    category_high(asw, A_sw),
-    category_high(msw, M_sw),
-    category_supported(avlsi, A_vlsi),
+    category_high_with_evidence(asw, A_sw),
+    category_high_with_evidence(msw, M_sw),
+    category_supported_with_evidence(avlsi, A_vlsi),
     observed_stage(Stage).
 
 % -----------------------------
@@ -113,3 +138,16 @@ count_all_feasibility_paths(Total) :-
     count_medium_feasibility_paths(M),
     count_low_feasibility_paths(L),
     Total is H + M + L.
+
+% -----------------------------
+% Path trace with evidence IDs
+% -----------------------------
+
+high_feasibility_path_with_evidence(
+    A_sw, M_sw, A_vlsi, Stage, Outcome,
+    A_sw_EvidenceIDs, M_sw_EvidenceIDs, A_vlsi_EvidenceIDs
+) :-
+    high_feasibility_path(A_sw, M_sw, A_vlsi, Stage, Outcome),
+    category_evidence_ids(asw, A_sw, A_sw_EvidenceIDs),
+    category_evidence_ids(msw, M_sw, M_sw_EvidenceIDs),
+    category_evidence_ids(avlsi, A_vlsi, A_vlsi_EvidenceIDs).
