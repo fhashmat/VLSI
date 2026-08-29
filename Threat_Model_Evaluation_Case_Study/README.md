@@ -1,6 +1,6 @@
 # Threat Model Evaluation: Case Study
 
-This folder contains the reproducibility artifacts for the case-study attacks described in the paper.
+This folder contains the reproducibility artifacts for the implemented case-study attacks described in the paper.
 
 Included case studies:
 
