@@ -1,19 +1,37 @@
 # Feasibility Analysis v1
 
-This folder contains the feasibility layer for the synthesized VLSI SWSC attack-path model.
+This folder contains the feasibility layer for the synthesized VLSI-SWSC attack-path model.
 
-The Prolog model enumerates possible attack paths. The feasibility layer does not change the model. Instead, it assigns evidence-support levels to model-generated paths using empirical evidence from the paper, including tool behavior, dependency exposure, CVEs, third-party library percentages, static-linking exposure, and Figure 3 library exposure.
+The Prolog model enumerates possible attack paths. The feasibility layer does not alter the synthesized model; instead, it evaluates the empirical support for each model-generated path using evidence from the paper, including tool behavior, dependency exposure, CVEs, third-party library percentages, static-linking exposure, and library exposure across VLSI design stages.
+
+The feasibility labels are evidence-support labels and do not indicate that every generated attack path has been experimentally validated.
 
 ## Files
 
-- `feasibility_evidence_v1.csv`: manually curated evidence from Tables 1–3 and Figure 3, together with evidence-to-model-category mappings.
-- `scored_possible_attack_paths_v1.csv`: all model-generated possible attack paths with path-level feasibility scores.
+- `feasibility_evidence_v1.csv`  
+  Contains the empirical evidence used for feasibility analysis, including evidence identifiers, model layers, related tools and stages, measured properties, evidence sources, feasibility signals, and mapping rationales.
 
-## Feasibility rubric
+- `category_feasibility_summary_v1.csv`  
+  Aggregates the evidence support for each `A_sw`, `M_sw`, and `A_vlsi` category and assigns category-level High, Medium, or Low feasibility support.
 
-The feasibility labels are evidence-support labels. They do not mean that an attack has been fully validated.
+- `scored_possible_attack_paths_v1.csv`  
+  Contains all 717 synthesized attack paths together with their `A_sw`, `M_sw`, `A_vlsi`, stage, outcome, supporting evidence identifiers, and final path-level feasibility classification.
 
-In this rubric, `✓` means that the corresponding part has evidence support in the current v1 evidence layer, and `✗` means that the current v1 evidence layer does not support that part enough.
+- `high_feasibility_attack_paths_v1.csv`  
+  Contains the 60 attack paths classified as High feasibility.
+
+- `feasibility_results_summary_v1.csv`  
+  Provides aggregate counts for the feasibility results.
+
+- `generate_feasible_attack_paths_v1.py`  
+  Applies the feasibility rubric to the synthesized attack paths using the category-level evidence summary and observed-stage evidence, generating the scored path dataset.
+
+- `verify_feasibility_consistency_v1.py`  
+  Verifies consistency between the CSV feasibility results and the Prolog feasibility model, including the expected counts of 60 High, 346 Medium, 311 Low, 717 total paths, 50 evidence facts, and 40 evidence mappings.
+
+## Feasibility Rubric
+
+In this rubric, `✓` indicates that the corresponding model component has sufficient evidence support in the current v1 evidence layer, while `✗` indicates insufficient support.
 
 | A_sw evidence | M_sw evidence | A_vlsi evidence | Stage evidence | Final label |
 |---|---|---|---|---|
@@ -24,12 +42,17 @@ In this rubric, `✓` means that the corresponding part has evidence support in 
 | ✓ / ✗ | ✓ / ✗ | ✓ | ✓, plus A_sw or M_sw has evidence | Medium |
 | ✗ | ✗ | ✓ / ✗ | ✓ / ✗ | Low |
 
-Simple interpretation:
+## Result Summary
 
-- High: all main parts of the path have evidence support.
-- Medium: some important parts have evidence support, but not all.
-- Low: the path is possible in the model, but the current v1 evidence layer does not support it enough for discussion.
+The current feasibility evaluation produces:
 
-## Important interpretation
+- **60 High-feasibility paths**
+- **346 Medium-feasibility paths**
+- **311 Low-feasibility paths**
+- **717 total synthesized paths**
 
-The model output should be interpreted as possible paths. The feasibility layer prioritizes these paths based on empirical support. Therefore, a high-feasibility path is not claimed to be a validated attack; it is a model-generated path with stronger empirical support in the current dataset.
+The feasibility layer uses **50 empirical evidence facts** and **40 evidence-to-category mappings**.
+
+## Interpretation
+
+A High-feasibility path is a model-generated possible attack path with stronger empirical support under the current evidence set. Medium indicates partial support, while Low indicates limited support under the current evidence. These classifications prioritize model-generated paths for analysis and do not constitute experimental validation of all 717 attacks.
