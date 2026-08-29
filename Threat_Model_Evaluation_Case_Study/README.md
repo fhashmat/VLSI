@@ -4,6 +4,8 @@ This folder contains the reproducibility artifacts for the case-study attacks de
 
 Included case studies:
 
-1. S1: CA1T1: Distribute Backdoored EDA Tool
-2. S2: AA2T2: Remove or Add Extra Input Artifacts
-3. S3: IA2T2: Distribute EDA Input Artifacts to Produce Unavailable Designs
+1. **S1 — P376: Build/Toolchain Compromise Leading to Information Leakage**
+
+2. **S2 — P703: Configuration-Based Flow Disruption Affecting Availability**
+
+3. **S3 — P616: Configuration-Based Design Tampering Affecting Integrity**
