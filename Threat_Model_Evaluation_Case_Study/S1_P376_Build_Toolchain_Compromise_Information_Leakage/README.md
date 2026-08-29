@@ -1,9 +1,16 @@
-# S1: CA1T1: Distribute Backdoored EDA Tool
+# P376: Build/Toolchain Compromise Leading to Information Leakage
 
-This folder contains files for reproducing the CA1T1 case-study attack.
+This folder contains files for reproducing the P376 case-study attack.
+This case study corresponds to taxonomy path **P376**:
+
+- **$A_{\mathrm{sw}}$ — Build/Toolchain Compromise:** the attacker compromises a software component used in the VLSI toolchain.
+- **$M_{\mathrm{sw}}$ — Build/Toolchain Execution Control:** the compromise gives the attacker control over code executed during the tool flow.
+- **$A_{\mathrm{vlsi}}$ — Information Leakage or Asset Exposure:** the compromised execution is used to expose confidential design data.
+- **Stage:** Logic Synthesis.
+- **Outcome:** Confidentiality.
 
 
-## CA1T1 Attack: Backdoored Library Intercepting gzread() (Design Data Leakage)
+## P376 Attack: Backdoored Library Intercepting gzread() (Design Data Leakage)
 
 ### Goal
 Demonstrate how a modified third-party compression library used by an EDA tool can silently leak confidential design data during normal execution.
@@ -14,7 +21,7 @@ Demonstrate how a modified third-party compression library used by an EDA tool c
 - **Tool:** Yosys
 - **Library:** libz.so.1
 - **Intercepted Function:** `gzread()`
-- **Stage Affected:** Stage 2 — Synthesis
+- **Stage Affected:** Stage 2 — Logic Synthesis
 - **Security Impact:** Confidentiality violation (design/IP leakage)
 
 ---
