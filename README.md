@@ -52,17 +52,49 @@ The `data/` directory contains:
 
 ### Synthesized Attack Model
 
-`prolog_synthesized_model_version1/` contains the Prolog implementation used to generate the 717 possible attack paths.
+`prolog_synthesized_model_version1/` contains the Prolog implementation used to generate the 717 possible attack paths following:
+
+`A_sw -> M_sw -> A_vlsi -> Stage -> Outcome`
+
+It contains the entity definitions, reviewed relationships, synthesis rules, query helpers, and model execution script.
+
+Run from the repository root:
+
+```bash
+./VLSI_SWSC_Attack_Taxonomy/prolog_synthesized_model_version1/run_model_queries.sh
+```
+
+Detailed model queries and file descriptions are provided in:
+
+```text
+VLSI_SWSC_Attack_Taxonomy/prolog_synthesized_model_version1/README.md
+```
+
 
 ### Feasibility Model
 
-`prolog_feasibility_model_version1/` contains the Prolog implementation used to classify the synthesized paths as:
+`prolog_feasibility_model_version1/` contains the evidence-based feasibility layer used to classify the synthesized attack paths.
 
 - 60 High
 - 346 Medium
 - 311 Low
+- 717 total paths
+- 50 evidence facts
+- 40 evidence to category mapping
 
-These labels indicate empirical support and do not imply experimental validation of all paths.
+Run from the repository root:
+
+```text
+./VLSI_SWSC_Attack_Taxonomy/prolog_feasibility_model_version1/run_feasibility_queries.sh
+```
+
+The feasibility labels indicate empirical support and do not imply experimental validation of all paths.
+
+Detailed feasibility rules and file descriptions are provided in:
+
+```text
+VLSI_SWSC_Attack_Taxonomy/prolog_feasibility_model_version1/README.md
+```
 
 
 
