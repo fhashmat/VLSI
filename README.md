@@ -20,40 +20,40 @@ VLSI/
 │
 └── README.md
 ```
-Tool Setup
+## Tool Setup
 
 The Threat_Model_Evaluation_Case_Study/Tools/ directory contains setup notes for the open-source VLSI tools used in the case studies.
 
+```text
 Threat_Model_Evaluation_Case_Study/Tools/Yosys/
 Threat_Model_Evaluation_Case_Study/Tools/OpenTimer/
+```
 
-Requirements
+## Requirements
 
 The artifact was prepared for a Linux environment. The following packages are generally required:
 
+```text
 sudo apt-get update
 sudo apt-get install -y gcc make git cmake g++ python3 zlib1g-dev libreadline-dev
+```
 
 Additional tool-specific dependencies are listed in the corresponding files under Threat_Model_Evaluation_Case_Study/Tools/.
 
-Running the Case Studies
+## Running the Case Studies
 
 Each case-study folder contains its own README with the exact steps for reproducing the corresponding taxonomy-derived attack.
 
 A typical workflow is:
 
-Build or install the required open-source tool.
-Compile the provided wrapper library.
-Run the tool in a controlled test environment.
-Observe the generated output files or design changes.
-Compare the observed result with the expected security impact.
+1. Build or install the required open-source tool.
+2. Compile the provided wrapper library.
+3. Run the tool in a controlled test environment.
+4. Observe the generated output files or design changes.
+5. Compare the observed result with the expected security impact.
 
 
-Two important changes here:
-- `Tools/` is now correctly nested under the case-study folder.
-- The taxonomy folder is now visible in the root structure.
 
-Later, after we finish the taxonomy READMEs, we can add one short section explaining the `717` synthesized paths and feasibility artifacts.
 
 
 
