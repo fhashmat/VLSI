@@ -17,9 +17,55 @@ VLSI/
 │       └── OpenTimer/
 │
 ├── VLSI_SWSC_Attack_Taxonomy/
+│   ├── README.md
+│   ├── data/
+│   │   ├── Asw/
+│   │   ├── Avlsi/
+│   │   ├── asw_avlsi_bridge_mapping.csv
+│   │   ├── model_synthesis_v1/
+│   │   └── feasibility_v1/
+│   ├── prolog_synthesized_model_version1/
+│   ├── prolog_feasibility_model_version1/
+│   └── archive/
 │
 └── README.md
 ```
+# VLSI-SWSC Attack Taxonomy and Prolog Models
+
+The `VLSI_SWSC_Attack_Taxonomy/` directory contains the data and Prolog implementations used to construct and evaluate the VLSI-SWSC attack taxonomy.
+
+The model follows:
+
+`A_sw -> M_sw -> A_vlsi -> Stage -> Outcome`
+
+## Taxonomy Data
+
+The `data/` directory contains:
+
+- `Asw/` — software supply-chain attack-vector extraction and mechanism mappings.
+- `Avlsi/` — VLSI-side attack extraction and mechanism mappings.
+- `asw_avlsi_bridge_mapping.csv` — mappings connecting software-side mechanisms to VLSI-side attacks.
+- `model_synthesis_v1/` — synthesized model outputs, including 717 possible attack paths.
+- `feasibility_v1/` — empirical evidence and feasibility results for the synthesized paths.
+
+## Prolog Models
+
+### Synthesized Attack Model
+
+`prolog_synthesized_model_version1/` contains the Prolog implementation used to generate the 717 possible attack paths.
+
+### Feasibility Model
+
+`prolog_feasibility_model_version1/` contains the Prolog implementation used to classify the synthesized paths as:
+
+- 60 High
+- 346 Medium
+- 311 Low
+
+These labels indicate empirical support and do not imply experimental validation of all paths.
+
+
+
 ## Tool Setup
 
 The Threat_Model_Evaluation_Case_Study/Tools/ directory contains setup notes for the open-source VLSI tools used in the case studies.
